@@ -76,6 +76,22 @@ button:hover {
     background-color: #555;
 }
 
+button#tryAgainBtn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+}
+
+button#tryAgainBtn:hover {
+    background-color: #555;
+}
+
 #results {
     display: none;
     margin-top: 20px;

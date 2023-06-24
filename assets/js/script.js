@@ -49,3 +49,18 @@ function getCorrectAnswer(questionIndex) {
 
     return correctAnswers[questionIndex];
 }
+
+document.getElementById("tryAgainBtn").addEventListener("click", resetQuiz);
+
+        function resetQuiz() {
+            // Clear selected answers
+            var selectedAnswers = document.querySelectorAll('input[type="radio"]:checked');
+            for (var i = 0; i < selectedAnswers.length; i++) {
+                selectedAnswers[i].checked = false;
+            }
+
+            // Hide the results section
+            resultsSection.style.display = "none";
+            // Show the quiz section
+            quizSection.style.display = "block";
+        }
