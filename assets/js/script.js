@@ -1,4 +1,4 @@
-// JavaScript code for quiz functionality
+/**  JavaScript code for quiz functionality **/
 const submitButton = document.getElementById('submitBtn');
 const quizSection = document.getElementById('quiz');
 const resultsSection = document.getElementById('results');
@@ -53,14 +53,14 @@ function getCorrectAnswer(questionIndex) {
 document.getElementById("tryAgainBtn").addEventListener("click", resetQuiz);
 
         function resetQuiz() {
-            // Clear selected answers
+            /** Clear selected answers **/
             var selectedAnswers = document.querySelectorAll('input[type="radio"]:checked');
             for (var i = 0; i < selectedAnswers.length; i++) {
                 selectedAnswers[i].checked = false;
             }
 
-            // Hide the results section
+            /** Hide the results section **/
             resultsSection.style.display = "none";
-            // Show the quiz section
+            /**  Show the quiz section **/
             quizSection.style.display = "block";
         }
