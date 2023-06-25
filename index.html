@@ -1,134 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>The Premier Football Quiz</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <title>The Premier Football Quiz</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="heading">
+                The Premier Football Quiz!
+            </h1>
+        </header>
 
-    
+        <main>
+            <section id="quiz">
+                <div id="timer">Timer: <span id="countdown"></span></div>
 
-    <header>
-        <h1 class="heading">
-            The Premier Football Quiz!
-        </h1>
-    </header>
+                <p>
+                    Test your knowledge of the world's most popular sport with this exciting football quiz! Put your football expertise to the test as you answer questions about FIFA World Cup winners, legendary players, historical moments,
+                    and more. Whether you're a die-hard fan or a casual observer, this quiz will challenge your knowledge and keep you on the edge of your seat. So lace up your boots, get ready to dribble through the questions, and see if
+                    you can score a perfect goal in this thrilling football quiz!
+                </p>
 
-    <main >
-        <section id="quiz">
+                <div class="question">
+                    <h3>Question: Who won the FIFA World Cup in 2018?</h3>
+                    <input type="radio" name="q1" value="France" />France<br />
+                    <input type="radio" name="q1" value="Germany" />Germany<br />
+                    <input type="radio" name="q1" value="Brazil" />Brazil<br />
+                </div>
 
-            <div id="timer">Timer: <span id="countdown"></span></div>
-            
-            <p>Test your knowledge of the world's most popular sport with this exciting football quiz! 
-                Put your football expertise to the test as you answer questions about FIFA World Cup winners, legendary players, historical moments, and more. 
-                Whether you're a die-hard fan or a casual observer, this quiz will challenge your knowledge and keep you on the edge of your seat. 
-                So lace up your boots, get ready to dribble through the questions, and see if you can score a perfect goal in this thrilling football quiz!</p>
+                <div class="question">
+                    <h3>Question: Which player has won the most Ballon d'Or awards?</h3>
+                    <input type="radio" name="q2" value="Lionel Messi" />Lionel Messi<br />
+                    <input type="radio" name="q2" value="Cristiano Ronaldo" />Cristiano Ronaldo<br />
+                    <input type="radio" name="q2" value="Pelé" />Pelé<br />
+                </div>
 
-            <div class="question">
-                <h3>Question: Who won the FIFA World Cup in 2018?</h3>
-                <input type="radio" name="q1" value="France">France<br>
-                <input type="radio" name="q1" value="Germany">Germany<br>
-                <input type="radio" name="q1" value="Brazil">Brazil<br>
-            </div>
+                <div class="question">
+                    <h3>Question: Which country has won the most FIFA World Cup titles?</h3>
+                    <input type="radio" name="q3" value="Brazil" />Brazil<br />
+                    <input type="radio" name="q3" value="Germany" />Germany<br />
+                    <input type="radio" name="q3" value="Italy" />Italy<br />
+                </div>
 
-            <div class="question">
-                <h3>Question: Which player has won the most Ballon d'Or awards?</h3>
-                <input type="radio" name="q2" value="Lionel Messi">Lionel Messi<br>
-                <input type="radio" name="q2" value="Cristiano Ronaldo">Cristiano Ronaldo<br>
-                <input type="radio" name="q2" value="Pelé">Pelé<br>
-            </div>
+                <div class="question">
+                    <h3>Question: Who is the all-time leading goal scorer in international matches?</h3>
+                    <input type="radio" name="q4" value="Cristiano Ronaldo" />Cristiano Ronaldo<br />
+                    <input type="radio" name="q4" value="Pelé" />Pelé<br />
+                    <input type="radio" name="q4" value="Marta" />Marta<br />
+                </div>
 
-            <div class="question">
-                <h3>Question: Which country has won the most FIFA World Cup titles?</h3>
-                <input type="radio" name="q3" value="Brazil">Brazil<br>
-                <input type="radio" name="q3" value="Germany">Germany<br>
-                <input type="radio" name="q3" value="Italy">Italy<br>
-            </div>
+                <div class="question">
+                    <h3>Question: Which country won the UEFA Euro 2020 tournament</h3>
+                    <input type="radio" name="q5" value="Italy" />Italy<br />
+                    <input type="radio" name="q5" value="England" />England<br />
+                    <input type="radio" name="q5" value="France" />France<br />
+                </div>
 
-            <div class="question">
-                <h3>Question: Who is the all-time leading goal scorer in international matches?</h3>
-                <input type="radio" name="q4" value="Cristiano Ronaldo">Cristiano Ronaldo<br>
-                <input type="radio" name="q4" value="Pelé">Pelé<br>
-                <input type="radio" name="q4" value="Marta">Marta<br>
-            </div>
+                <div class="question">
+                    <h3>Question: Which team has won the most Premier League titles?</h3>
+                    <input type="radio" name="q6" value="Manchester United" /> Manchester United<br />
+                    <input type="radio" name="q6" value="Liverpool" /> Liverpool<br />
+                    <input type="radio" name="q6" value="Chelsea" /> Chelsea<br />
+                    <input type="radio" name="q6" value="Arsenal" /> Arsenal<br />
+                </div>
 
-            <div class="question">
-                <h3>Question: Which country won the UEFA Euro 2020 tournament</h3>
-                <input type="radio" name="q5" value="Italy">Italy<br>
-                <input type="radio" name="q5" value="England">England<br>
-                <input type="radio" name="q5" value="France">France<br>
-            </div>
+                <div class="question">
+                    <h3>Question: Who is the all-time leading goalscorer in the Premier League?</h3>
+                    <input type="radio" name="q7" value="Alan Shearer" /> Alan Shearer<br />
+                    <input type="radio" name="q7" value="Thierry Henry" /> Thierry Henry<br />
+                    <input type="radio" name="q7" value="Wayne Rooney" /> Wayne Rooney<br />
+                    <input type="radio" name="q7" value="Sergio Aguero" /> Sergio Aguero<br />
+                </div>
 
-            <div class="question">
-                <h3>Question: Which team has won the most Premier League titles?</h3>
-                <input type="radio" name="q6" value="Manchester United"> Manchester United<br>
-                <input type="radio" name="q6" value="Liverpool"> Liverpool<br>
-                <input type="radio" name="q6" value="Chelsea"> Chelsea<br>
-                <input type="radio" name="q6" value="Arsenal"> Arsenal<br>
-            </div>
-    
-            <div class="question">
-                <h3>Question: Who is the all-time leading goalscorer in the Premier League?</h3>
-                <input type="radio" name="q7" value="Alan Shearer"> Alan Shearer<br>
-                <input type="radio" name="q7" value="Thierry Henry"> Thierry Henry<br>
-                <input type="radio" name="q7" value="Wayne Rooney"> Wayne Rooney<br>
-                <input type="radio" name="q7" value="Sergio Aguero"> Sergio Aguero<br>
-            </div>
-    
-            <div class="question">
-                <h3>Question: Which team holds the record for the most points in a single Premier League season?</h3>
-                <input type="radio" name="q8" value="Manchester United"> Manchester United<br>
-                <input type="radio" name="q8" value="Manchester City"> Manchester City<br>
-                <input type="radio" name="q8" value="Chelsea"> Chelsea<br>
-                <input type="radio" name="q8" value="Liverpool"> Liverpool<br>
-            </div>
-    
-            <div class="question">
-                <h3>Question: Who is the youngest player to score a Premier League hat-trick?</h3>
-                <input type="radio" name="q9" value="Michael Owen"> Michael Owen<br>
-                <input type="radio" name="q9" value="Wayne Rooney"> Wayne Rooney<br>
-                <input type="radio" name="q9" value="Robbie Fowler"> Robbie Fowler<br>
-                <input type="radio" name="q9" value="Francis Jeffers"> Francis Jeffers<br>
-            </div>
-    
-            <div class="question">
-                <h3>Question: Which club won the first-ever Premier League season in 1992-1993?</h3>
-                <input type="radio" name="q10" value="Manchester United"> Manchester United<br>
-                <input type="radio" name="q10" value="Arsenal"> Arsenal<br>
-                <input type="radio" name="q10" value="Blackburn Rovers"> Blackburn Rovers<br>
-                <input type="radio" name="q10" value="Liverpool"> Liverpool<br>
-            </div>
-        
-            <button id="submitBtn">Submit</button>
+                <div class="question">
+                    <h3>Question: Which team holds the record for the most points in a single Premier League season?</h3>
+                    <input type="radio" name="q8" value="Manchester United" /> Manchester United<br />
+                    <input type="radio" name="q8" value="Manchester City" /> Manchester City<br />
+                    <input type="radio" name="q8" value="Chelsea" /> Chelsea<br />
+                    <input type="radio" name="q8" value="Liverpool" /> Liverpool<br />
+                </div>
 
-        </section>
+                <div class="question">
+                    <h3>Question: Who is the youngest player to score a Premier League hat-trick?</h3>
+                    <input type="radio" name="q9" value="Michael Owen" /> Michael Owen<br />
+                    <input type="radio" name="q9" value="Wayne Rooney" /> Wayne Rooney<br />
+                    <input type="radio" name="q9" value="Robbie Fowler" /> Robbie Fowler<br />
+                    <input type="radio" name="q9" value="Francis Jeffers" /> Francis Jeffers<br />
+                </div>
 
+                <div class="question">
+                    <h3>Question: Which club won the first-ever Premier League season in 1992-1993?</h3>
+                    <input type="radio" name="q10" value="Manchester United" /> Manchester United<br />
+                    <input type="radio" name="q10" value="Arsenal" /> Arsenal<br />
+                    <input type="radio" name="q10" value="Blackburn Rovers" /> Blackburn Rovers<br />
+                    <input type="radio" name="q10" value="Liverpool" /> Liverpool<br />
+                </div>
 
-        <section id="results">
-            <h2>Quiz Results</h2>
-            <p id="score"></p>
-            <button id="tryAgainBtn">Try Again</button>
-        </section>
+                <button id="submitBtn">Submit</button>
+            </section>
 
-        <footer>
-            &copy; 2023 Quiz Website. Made for a Code Institute Project.
-        </footer>
-    </main>
-    
+            <section id="results">
+                <h2>Quiz Results</h2>
+                <p id="score"></p>
+                <button id="tryAgainBtn">Try Again</button>
+            </section>
 
+            <footer>
+                &copy; 2023 Quiz Website. Made for a Code Institute Project.
+            </footer>
+        </main>
 
-
-
-
-
-
-
-
-
-
-    <script src="assets/js/script.js"></script>
-</body>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
