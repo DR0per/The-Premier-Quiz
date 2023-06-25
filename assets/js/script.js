@@ -64,3 +64,42 @@ document.getElementById("tryAgainBtn").addEventListener("click", resetQuiz);
             /**  Show the quiz section **/
             quizSection.style.display = "block";
         }
+
+
+/** Set the duration of the quiz in seconds */
+const quizDuration = 120; // 2 minutes
+
+/** Get the timer element from the HTML */
+const timerElement = document.getElementById('timer');
+
+/** Calculate the deadline by adding the duration to the current time */
+const deadline = new Date().getTime() + quizDuration * 1000;
+
+/** Function to update the timer display */
+function updateTimer() {
+    /** Get the current time */
+    const currentTime = new Date().getTime();
+
+    /** Calculate the remaining time */
+    const remainingTime = deadline - currentTime;
+
+    /** Calculate minutes and seconds */
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+    /** Display the remaining time */
+    timerElement.textContent = `Time remaining: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+    /** Check if the time has run out */
+    if (remainingTime <= 0) {
+        /** Automatically submit the quiz or show the results */
+        showResults();
+    } else {
+        /** Update the timer every second */
+        setTimeout(updateTimer, 1000);
+    }
+}
+
+/** Start the timer */
+updateTimer();
+
