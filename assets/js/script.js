@@ -72,8 +72,7 @@ const quizDuration = 120; // 2 minutes
 /** Get the timer element from the HTML */
 const timerElement = document.getElementById('timer');
 
-/** Calculate the deadline by adding the duration to the current time */
-const deadline = new Date().getTime() + quizDuration * 1000;
+let deadline = null; /** Store the quiz deadline */
 
 /** Function to update the timer display */
 function updateTimer() {
@@ -100,6 +99,46 @@ function updateTimer() {
     }
 }
 
-/** Start the timer */
-updateTimer();
+/** Function to start the timer */
+function startTimer() {
+    /** Calculate the deadline by adding the duration to the current time */
+    deadline = new Date().getTime() + quizDuration * 1000;
+
+    /** Start the timer */
+    updateTimer();
+}
+
+/** Function to reset the quiz and timer */
+function resetQuiz() {
+    /** Clear selected answers **/
+    const selectedAnswers = document.querySelectorAll('input[type="radio"]:checked');
+    for (let i = 0; i < selectedAnswers.length; i++) {
+        selectedAnswers[i].checked = false;
+    }
+
+    /** Hide the results section **/
+    const resultsSection = document.getElementById('results');
+    resultsSection.style.display = 'none';
+
+    /** Show the quiz section **/
+    const quizSection = document.getElementById('quiz');
+    quizSection.style.display = 'block';
+
+    /** Restart the timer */
+    startTimer();
+}
+
+/** Call the startTimer function when the page is loaded */
+window.addEventListener('DOMContentLoaded', function () {
+    startTimer();
+});
+
+/** Get the "Try Again" button element */
+const tryAgainButton = document.getElementById('tryAgainBtn');
+
+/** Add click event listener to the "Try Again" button */
+tryAgainButton.addEventListener('click', function () {
+    /** Call the resetQuiz function when the "Try Again" button is clicked */
+    resetQuiz();
+});
 
