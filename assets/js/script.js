@@ -6,6 +6,27 @@ const scoreElement = document.getElementById("score");
 
 submitButton.addEventListener("click", showResults);
 
+/** Function to Randomize Questions for the user */
+
+function randomizeQuestions() {
+    let questionContainer = document.getElementById('questionContainer');
+    let questions = document.getElementsByClassName('question');
+    let questionArray = Array.prototype.slice.call(questions);
+    let randomizedArray = [];
+  
+    while (questionArray.length > 0) {
+      let randomQuestions = Math.floor(Math.random() * questionArray.length);
+      let randomizedQuestion = questionArray.splice(randomQuestions, 1)[0];
+      randomizedArray.push(randomizedQuestion);
+    }
+  
+    for (let i = 0; i < randomizedArray.length; i++) {
+      questionContainer.appendChild(randomizedArray[i]);
+    }
+  }
+  
+  randomizeQuestions();
+
 function showResults() {
     const questions = document.getElementsByClassName("question");
     let score = 0;
@@ -43,7 +64,10 @@ function getCorrectAnswer(questionIndex) {
         "Alan Shearer" /** Correct answer for question 7 **/,
         "Manchester City" /** Correct answer for question 8 **/,
         "Wayne Rooney" /** Correct answer for question 9 **/,
-        "Blackburn Rovers" /** Correct answer for question 10 **/,
+        "Blackburn Rovers", /** Correct answer for question 10 **/,
+        "Brazil", /** Correct answer for question 11 **/,
+        "Real Madrid", /** Correct answer for question 12 **/,
+        "Lionel Messi" /** Correct answer for question 13 **/,
     ];
 
     return correctAnswers[questionIndex];
@@ -139,4 +163,5 @@ tryAgainButton.addEventListener("click", function () {
     /** Call the resetQuiz function when the "Try Again" button is clicked */
     resetQuiz();
 });
+
 
