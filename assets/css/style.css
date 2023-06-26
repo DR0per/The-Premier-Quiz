@@ -103,11 +103,14 @@ button#tryAgainBtn:hover {
     margin-top: 0;
 }
 
+
 #timer {
-    text-align: center;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    text-align: left;
     font-size: 24px;
-    margin-bottom: 20px;
-}
+  }
 
 footer {
     background-color: #333;

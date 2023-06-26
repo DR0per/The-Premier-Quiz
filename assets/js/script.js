@@ -7,22 +7,29 @@ const scoreElement = document.getElementById("score");
 submitButton.addEventListener("click", showResults);
 
 /** Function to Randomize Questions for the user */
-
 function randomizeQuestions() {
     let questionContainer = document.getElementById('questionContainer');
-    let questions = document.getElementsByClassName('question');
-    let questionArray = Array.prototype.slice.call(questions);
-    let randomizedArray = [];
-  
-    while (questionArray.length > 0) {
-      let randomQuestions = Math.floor(Math.random() * questionArray.length);
-      let randomizedQuestion = questionArray.splice(randomQuestions, 1)[0];
-      randomizedArray.push(randomizedQuestion);
+    let questions = Array.from(questionContainer.getElementsByClassName('question'));
+    
+    // Randomly select and display 15 questions
+    let selectedQuestions = shuffleArray(questions).slice(0, 15);
+    
+    // Clear the container
+    questionContainer.innerHTML = '';
+    
+    // Append the selected questions to the container
+    for (let i = 0; i < selectedQuestions.length; i++) {
+      questionContainer.appendChild(selectedQuestions[i]);
     }
+  }
   
-    for (let i = 0; i < randomizedArray.length; i++) {
-      questionContainer.appendChild(randomizedArray[i]);
+  /** Shuffle an array using Fisher-Yates algorithm */
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
+    return array;
   }
   
   randomizeQuestions();
@@ -55,19 +62,26 @@ function showResults() {
 
 function getCorrectAnswer(questionIndex) {
     const correctAnswers = [
-        "France" /** Correct answer for question 1 **/,
-        "Lionel Messi" /** Correct answer for question 2 **/,
-        "Brazil" /** Correct answer for question 3 **/,
-        "Cristiano Ronaldo" /** Correct answer for question 4 **/,
-        "Italy" /** Correct answer for question 5 **/,
-        "Manchester United" /** Correct answer for question 6 **/,
-        "Alan Shearer" /** Correct answer for question 7 **/,
-        "Manchester City" /** Correct answer for question 8 **/,
-        "Wayne Rooney" /** Correct answer for question 9 **/,
-        "Blackburn Rovers", /** Correct answer for question 10 **/,
-        "Brazil", /** Correct answer for question 11 **/,
-        "Real Madrid", /** Correct answer for question 12 **/,
-        "Lionel Messi" /** Correct answer for question 13 **/,
+        "France", /** Correct answer for question 1 **/
+        "Lionel Messi", /** Correct answer for question 2 **/
+        "Brazil", /** Correct answer for question 3 **/
+        "Cristiano Ronaldo", /** Correct answer for question 4 **/
+        "Italy", /** Correct answer for question 5 **/
+        "Manchester United", /** Correct answer for question 6 **/
+        "Alan Shearer", /** Correct answer for question 7 **/
+        "Manchester City", /** Correct answer for question 8 **/
+        "Wayne Rooney", /** Correct answer for question 9 **/
+        "Manchester United", /** Correct answer for question 10 **/
+        "Erik ten Hag", /** Correct answer for question 11 **/
+        "Pep Guardiola", /** Correct answer for question 12 **/
+        "PSG", /** Correct answer for question 13 **/
+        "Juventus", /** Correct answer for question 14 **/
+        "2003", /** Correct answer for question 15 **/
+        "1999", /** Correct answer for question 16 **/
+        "03-04", /** Correct answer for question 17 **/
+        "Manchester City", /** Correct answer for question 18 **/
+        "Ryan Giggs", /** Correct answer for question 19 **/
+        "Richard Dunne" /** Correct answer for question 20 **/
     ];
 
     return correctAnswers[questionIndex];
