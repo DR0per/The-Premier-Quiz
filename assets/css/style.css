@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #c0392b; /* Red color */
     padding: 20px;
     text-align: center;
     position: fixed;
@@ -34,7 +34,7 @@ main {
 }
 
 h2 {
-    color: #333;
+    color: #c0392b; /* Red color */
     font-size: 24px;
     margin: 0 0 20px 0;
 }
@@ -51,7 +51,7 @@ p {
 }
 
 .question h3 {
-    color: #333;
+    color: #c0392b; /* Red color */
     font-size: 20px;
     margin: 0 0 10px 0;
 }
@@ -61,7 +61,7 @@ input[type="radio"] {
 }
 
 button {
-    background-color: #333;
+    background-color: #c0392b; /* Red color */
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -73,11 +73,11 @@ button {
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #e74c3c; /* Darker red color on hover */
 }
 
 button#tryAgainBtn {
-    background-color: #333;
+    background-color: #c0392b; /* Red color */
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -89,7 +89,7 @@ button#tryAgainBtn {
 }
 
 button#tryAgainBtn:hover {
-    background-color: #555;
+    background-color: #e74c3c; /* Darker red color on hover */
 }
 
 #results {
@@ -98,7 +98,7 @@ button#tryAgainBtn:hover {
 }
 
 #score {
-    color: #333;
+    color: #c0392b; /* Red color */
     font-size: 20px;
     margin-top: 0;
 }
@@ -110,10 +110,11 @@ button#tryAgainBtn:hover {
     left: 20px;
     text-align: left;
     font-size: 24px;
-  }
+    color: #c0392b; /* Red color */
+}
 
 footer {
-    background-color: #333;
+    background-color: #c0392b; /* Red color */
     padding: 20px;
     text-align: center;
     color: #fff;

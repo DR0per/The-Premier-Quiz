@@ -1,4 +1,4 @@
-// Define the quiz questions
+//** Define the quiz questions */
 let quizQuestions = [
         {
           text: "Question: Who won the FIFA World Cup 2018?",
@@ -102,95 +102,123 @@ let quizQuestions = [
         },
       ];
   
-  // Global variables
-  const quizSection = document.getElementById("quiz");
-  const resultsSection = document.getElementById("results");
-  const scoreElement = document.getElementById("score");
-  const questionContainer = document.getElementById("questionContainer");
-  const submitButton = document.getElementById("submitBtn");
-  const tryAgainButton = document.getElementById("tryAgainBtn");
-  let score = 0;
-  let currentQuestionIndex = 0;
   
-  // Function to generate the HTML for a single question
-  function generateQuestionHTML(question, index) {
-    const questionHTML = document.createElement("div");
-    questionHTML.innerHTML = `
-      <h2>${question.text}</h2>
-      <ul>
-        ${question.options
-          .map(
-            option => `
-              <li>
-                <label>
-                  <input type="radio" name="question-${index}" value="${option}">
-                  ${option}
-                </label>
-              </li>
-            `
-          )
-          .join("")}
-      </ul>
-    `;
-    return questionHTML;
-  }
-  
-  // Function to display the current question in the HTML
-  function displayCurrentQuestion() {
-    questionContainer.innerHTML = "";
-    const currentQuestion = quizQuestions[currentQuestionIndex];
-    const questionHTML = generateQuestionHTML(currentQuestion, currentQuestionIndex);
-    questionContainer.appendChild(questionHTML);
-  }
-  
-  // Function to check the user's answer and update the score
-  function checkAnswer() {
-    const currentQuestion = quizQuestions[currentQuestionIndex];
-    const selectedOption = document.querySelector(`input[name="question-${currentQuestionIndex}"]:checked`);
-  
-    if (selectedOption && selectedOption.value === currentQuestion.correctAnswer) {
-      score++;
-    }
-  }
-  
-  // Function to display the quiz results
-  function displayQuizResults() {
-    quizSection.style.display = "none";
-    resultsSection.style.display = "block";
-    scoreElement.textContent = `Your score is ${score} out of ${quizQuestions.length}`;
-  }
-  
-  // Function to handle the form submission
-  function handleSubmit() {
-    checkAnswer();
-    currentQuestionIndex++;
-  
-    if (currentQuestionIndex < quizQuestions.length) {
-      displayCurrentQuestion();
-    } else {
-      displayQuizResults();
-    }
-  }
-  
-  // Function to reset the quiz
-  function resetQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    displayCurrentQuestion();
-    quizSection.style.display = "block";
-    resultsSection.style.display = "none";
-  }
-  
-  // Event listener for the submit button
-  submitButton.addEventListener("click", handleSubmit);
-  
-  // Event listener for the "Try Again" button
-  tryAgainButton.addEventListener("click", resetQuiz);
-  
-  // Initialize the quiz
-  displayCurrentQuestion();
-  resultsSection.style.display = "none";
 
-  
-  
-  
+/** Global variables */
+const quizSection = document.getElementById("quiz");
+const resultsSection = document.getElementById("results");
+const scoreElement = document.getElementById("score");
+const questionContainer = document.getElementById("questionContainer");
+const submitButton = document.getElementById("submitBtn");
+const tryAgainButton = document.getElementById("tryAgainBtn");
+const timerElement = document.getElementById("countdown");
+let score = 0;
+let currentQuestionIndex = 0;
+let timeLeft = 120; /** 2 minutes in seconds */
+
+/** Generates the HTML for a single question */
+function generateQuestionHTML(question, index) {
+  const questionHTML = document.createElement("div");
+  questionHTML.innerHTML = `
+    <h2>${question.text}</h2>
+    <ul>
+      ${question.options
+        .map(
+          option => `
+            <li>
+              <label>
+                <input type="radio" name="question-${index}" value="${option}">
+                ${option}
+              </label>
+            </li>
+          `
+        )
+        .join("")}
+    </ul>
+  `;
+  return questionHTML;
+}
+
+/** Displays the current question */
+function displayCurrentQuestion() {
+  questionContainer.innerHTML = "";
+  const currentQuestion = quizQuestions[currentQuestionIndex];
+  const questionHTML = generateQuestionHTML(currentQuestion, currentQuestionIndex);
+  questionContainer.appendChild(questionHTML);
+}
+
+/** Check the user's answer and update the score */
+function checkAnswer() {
+  const currentQuestion = quizQuestions[currentQuestionIndex];
+  const selectedOption = document.querySelector(`input[name="question-${currentQuestionIndex}"]:checked`);
+
+  if (selectedOption && selectedOption.value === currentQuestion.correctAnswer) {
+    score++;
+  }
+}
+
+/** Displays the quiz results */
+function displayQuizResults() {
+  quizSection.style.display = "none";
+  resultsSection.style.display = "block";
+  scoreElement.textContent = `Your score is ${score} out of ${quizQuestions.length}`;
+}
+
+/** Handles the form submission */
+function handleSubmit() {
+  checkAnswer();
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < quizQuestions.length) {
+    displayCurrentQuestion();
+  } else {
+    clearInterval(timerInterval);
+    displayQuizResults();
+  }
+}
+
+/** Resets the quiz */
+function resetQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  displayCurrentQuestion();
+  quizSection.style.display = "block";
+  resultsSection.style.display = "none";
+  startTimer();
+}
+
+/** Starts the timer */
+function startTimer() {
+  timeLeft = 120; /** Reset the timer to 2 minutes */ 
+  timerElement.textContent = formatTime(timeLeft);
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+
+    if (timeLeft >= 0) {
+      timerElement.textContent = formatTime(timeLeft);
+    } else {
+      clearInterval(timerInterval);
+      handleSubmit();
+    }
+  }, 1000);
+}
+
+/** Function to format the time as mm:ss */
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secondsRemaining = seconds % 60;
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  const formattedSeconds = secondsRemaining < 10 ? `0${secondsRemaining}` : secondsRemaining;
+  return `${formattedMinutes}:${formattedSeconds}`;
+}
+
+/** Event listener for the submit button */
+submitButton.addEventListener("click", handleSubmit);
+
+/** Event listener for the "Try Again" button */
+tryAgainButton.addEventListener("click", resetQuiz);
+
+displayCurrentQuestion();
+resultsSection.style.display = "none";
+startTimer();
