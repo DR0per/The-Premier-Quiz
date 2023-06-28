@@ -8,13 +8,14 @@ body {
 }
 
 header {
-    background-color: #c0392b; /* Red color */
+    background-color: #3109c4; /* Red color */
     padding: 20px;
     text-align: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+
 }
 
 header h1 {
@@ -31,10 +32,11 @@ main {
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    border: solid black;
 }
 
 h2 {
-    color: #c0392b; /* Red color */
+    color: #3109c4; /* Red color */
     font-size: 24px;
     margin: 0 0 20px 0;
 }
@@ -44,16 +46,8 @@ p {
     line-height: 1.6;
 }
 
-.question {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-}
-
-.question h3 {
-    color: #c0392b; /* Red color */
-    font-size: 20px;
-    margin: 0 0 10px 0;
+.quizResults {
+    font-size: 2rem;
 }
 
 input[type="radio"] {
@@ -61,7 +55,7 @@ input[type="radio"] {
 }
 
 button {
-    background-color: #c0392b; /* Red color */
+    background-color: #3109c4; /* Red color */
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -73,16 +67,17 @@ button {
 }
 
 button:hover {
-    background-color: #e74c3c; /* Darker red color on hover */
+    background-color: #18045e; /* Darker red color on hover */
 }
 
 #results {
     display: none;
     margin-top: 20px;
+    text-align: center;
 }
 
 #score {
-    color: #c0392b; /* Red color */
+    color: #3109c4; /* Red color */
     font-size: 20px;
     margin-top: 0;
 }
@@ -90,14 +85,15 @@ button:hover {
 #timer {
     position: fixed;
     top: 80px;
-    left: 20px;
-    text-align: left;
+    margin-left: 300px;
+    text-align: center;
     font-size: 24px;
-    color: #c0392b; /* Red color */
+    color: #3109c4; /* Red color */
+    clear: both;
 }
 
 footer {
-    background-color: #c0392b; /* Red color */
+    background-color: #3109c4; /* Red color */
     padding: 20px;
     text-align: center;
     color: #fff;
