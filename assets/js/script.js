@@ -249,5 +249,5 @@ function shuffleArray(array) {
     startTimer();
   }
   
-  /** Call the function to randomize the questions initially */
+  /** Randomize the questions */
   randomizeQuizQuestions();
