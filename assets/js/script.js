@@ -219,6 +219,35 @@ submitButton.addEventListener("click", handleSubmit);
 /** Event listener for the "Try Again" button */
 tryAgainButton.addEventListener("click", resetQuiz);
 
+
 displayCurrentQuestion();
 resultsSection.style.display = "none";
 startTimer();
+
+/** Function to shuffle an array */
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  
+  /** Randomize the order of quiz questions */
+  function randomizeQuizQuestions() {
+    quizQuestions = shuffleArray(quizQuestions);
+  }
+  
+  /** Resets the quiz and randomizes the questions */
+  function resetQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    randomizeQuizQuestions(); /** Randomize the questions */
+    displayCurrentQuestion();
+    quizSection.style.display = "block";
+    resultsSection.style.display = "none";
+    startTimer();
+  }
+  
+  /** Call the function to randomize the questions initially */
+  randomizeQuizQuestions();

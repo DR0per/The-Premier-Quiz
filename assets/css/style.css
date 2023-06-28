@@ -76,22 +76,6 @@ button:hover {
     background-color: #e74c3c; /* Darker red color on hover */
 }
 
-button#tryAgainBtn {
-    background-color: #c0392b; /* Red color */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto 0;
-}
-
-button#tryAgainBtn:hover {
-    background-color: #e74c3c; /* Darker red color on hover */
-}
-
 #results {
     display: none;
     margin-top: 20px;
@@ -102,7 +86,6 @@ button#tryAgainBtn:hover {
     font-size: 20px;
     margin-top: 0;
 }
-
 
 #timer {
     position: fixed;
