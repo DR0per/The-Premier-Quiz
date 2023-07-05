@@ -35,33 +35,29 @@ Welcome! The Premier Football Quiz is a simple and clean designed website that w
 
 ### 5. Results Section
 
-+ The Treats Section is a showroom showcasing a myriad of pictures of all the different products that Tara's Treats has on offer.
-+ With it's responsive design , users will appreciate the interactivty with the pictures as they transform when hovered on desktop or held down on a mobile/tablet device.
-+ As there are alot of pictures, some are hidden when accessed on a mobile device so as to increase the UX.
++ The Results Section is a simple designed page with shows the users their result.
++ It also has a Try Again button which will allow the user to retake the quiz.
++ After clicking the Try Again button, the Timer will restart at 2.00.
 
-<img src="assets/images/TreatsSection.jpg">
+<img src="assets/images/PP2-Results.png">
 
-### 6. Contact Form
+### 6. Footer
 
-+ The contact form is a simple design that allows users to get in contact with Tara's Treats if they are interested in the products.
-+ Users are asked to provide Full Name, Email, Mobile Number and are able to express what they would like to enquire about in the Enquiry section provided.
-
-<img src="assets/images/ContactForm.jpg">
++ The Footer fits in with the color scheme of the website.
++ It shows the name of the website and the reason behind why the quiz was made.
+<img src="assets/images/PP2-Footer.png">
 
 ## Validator Testing
 
 ### 1. HTML
 
-Throughout the course of building this website, I periodically tested each page and feature on Desktop/Tablet and Mobile Devices.
-As far as I am aware, all pages and features including the Tara's Treats Logo, NavBar, Products Section hover effect and clickable Links, the Footer hover effects and clickable links, the Treats section and hover effects including CSS styling rules which hide certain images when viewed on mobile devices and the Contact form are all 100% working on all devices. 
+Throughout the course of building this website, I periodically tested the website.
+As far as I am aware, the website works as intended on all devices.
 
-I tested them myself on 3 seperate devices and I got friends and family to open the sites on their devices and the results are the same. All pages and features work as intended on Desktop/Tablet/Mobile Devices. 
 
 There were no errors returned when passing through the official W3C validator.
 
-<img src="assets/images/IndexVal.jpg">
-<img src="assets/images/TreatsVal.jpg">
-<img src="assets/images/ContactVal.jpg">
+<img src="assets/images/PP2-HTML.png">
 
 ### 2. CSS
 
@@ -70,7 +66,39 @@ As far as I am aware, all pages and features work and appear correctly on each s
 
 There were no errors found when passing through the official Jigsaw Validator.
 
-<img src="assets/images/CSSVal.jpg">
+<img src="assets/images/PP2-CSS.png">
+
+### 3. JavaScript
+
+During my testing of the JS used in the site, the results show -
+
+There are 14 functions in this file.
+
+Function with the largest signature take 2 arguments, while the median is 0.
+
+Largest function has 7 statements in it, while the median is 4.
+
+The most complex function has a cyclomatic complexity value of 3 while the median is 1.
+
+It also shows that there are 32 warnings but 0 errors.
+
+<img src="assets/images/PP2-JS.png">
+
+### Lighthouse(Desktop)
+
+Using Lighouse to inspect the website on Desktop and the results are as follows -
+
+<img src="assets/images/PP2-Lighthouse-DT1.png">
+
+### Lighthouse(Mobile)
+
+Using lighthouse to inspect the website on Mobile and the results are as follows -
+
+<img src="assets/images/PP2-Lighthouse-Mobile.png">
+
+## Bugs
+
+I found one bug in my code that stops the website from working 100% as intended. The quiz should automatically submit once the timer runs to 0, but afer many attempts at fixing the bug I could not get it to work correctly.
 
 ## Deployment 
 
@@ -81,13 +109,11 @@ The site was deployed to Github pages. The steps I took to deploy were as follow
 + In the GitHub Pages section, select Main Branch and root folder and click save.
 + From there the page will automatically refresh and a live link will appear.
 
-The live link can be found here - [Tara's Treats](https://dr0per.github.io/Tara-s-Treats/).
+The live link can be found here - [The Premier Football Quiz](https://dr0per.github.io/The-Premier-Quiz/).
 
 ## Credits 
 
-+ The text for the Introductory Section was created using ChatGPT by prompting it with certain information about Tara's Treats.
-+ Instructions on how to implement form validation was learned throughout my participation in the Love Running project by Code Institute.
-+ The design for the layout of the Treats Section was also inspired by the Gallery Section in the Love Running project by Code Institute. 
-+ The icons in the NavBar and Footer were taken from Font Awesome.
-+ The photos used in the Products Section were obtained from Tara the official owner of Tara's Treats.
-+ The images used in the Treats Section were also obtained from Tara the official owner of Tara's Treats.
++ The text for the Introductory Section was created using ChatGPT.
++ I relied heavily on the information that I learned throughout the Java Script Essentials modules with Code Institute.
++ I also learned alot from Coding Ninjas and Stack Overflow throughout this project.
++ I completed this project without the use of any Third Party Code so in my opinion that is the reason this website is basic but gets the job done.
